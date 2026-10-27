@@ -2,126 +2,129 @@ import React, { useState } from 'react';
 import {
   Menu,
   X,
-  Utensils,
-  Flame,
-  HeartHandshake,
+  Smile,
+  Sparkles,
+  ShieldCheck,
   Clock,
   MapPin,
   Phone,
-  ShoppingBag,
-  Sparkles,
-  Coffee,
-  Cake,
-  Send
+  Calendar,
+  Award,
+  Activity,
+  PhoneCall,
+  CheckCircle2,
+  UserCheck,
+  Send,
+  Star
 } from 'lucide-react';
 
-export default function AntojitosLanding() {
+export default function DentalClinicLanding() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState('todos');
 
-  // Menú de productos / gusgueras
-  const menuItems = [
+  // Servicios Dentales
+  const servicios = [
     {
       id: 1,
-      nombre: 'Salchipulpos Especiales',
-      categoria: 'salados',
-      descripcion: 'Crujientes salchipulpos acompañados de papas a la francesa, queso amarillo fundido, catsup, crema y jalapeños.',
-      precio: '$65',
-      etiqueta: 'Más Vendido 🔥',
-      imagen: 'https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=600&q=80'
+      nombre: 'Limpieza Dental Ultrasonido',
+      categoria: 'preventiva',
+      descripcion: 'Eliminación profunda de sarro y placa bacteriana sin dolor, seguida de pulido y aplicación de flúor protector.',
+      precio: 'Desde $450',
+      etiqueta: 'Más Solicitado ✨',
+      imagen: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80'
     },
     {
       id: 2,
-      nombre: 'Crepa Dulce Antojo',
-      categoria: 'postres',
-      descripcion: 'Crepa recién hecha con Nutella, fresas frescas, plátano, bola de helado de vainilla y jarabe de chocolate.',
-      precio: '$75',
-      etiqueta: 'Favorito 🍓',
-      imagen: 'https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=600&q=80'
+      nombre: 'Blanqueamiento Dental LED',
+      categoria: 'estetica',
+      descripcion: 'Aclara hasta 4 tonos en una sola sesión. Tecnología de luz fría que no afecta ni sensibiliza el esmalte.',
+      precio: '$1,800',
+      etiqueta: 'Resultado Inmediato 💎',
+      imagen: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&q=80'
     },
     {
       id: 3,
-      nombre: 'Esquites Preparados en Vasote',
-      categoria: 'salados',
-      descripcion: 'Elotito tierno en vaso grande con mayonesa, queso cotija rallado, limón, chile del que pica o del que no pica y Takis molidos.',
-      precio: '$45',
-      etiqueta: 'Imperdible 🌽',
-      imagen: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=600&q=80'
+      nombre: 'Ortodoncia Invisible / Brackets',
+      categoria: 'ortodoncia',
+      descripcion: 'Alineación dental estética con alineadores transparentes o brackets de última generación (estéticos o metálicos).',
+      precio: 'Valoración $0',
+      etiqueta: 'Alineación Perfecta 🦷',
+      imagen: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=600&q=80'
     },
     {
       id: 4,
-      nombre: 'Frappé de Oreo & Nutella',
-      categoria: 'bebidas',
-      descripcion: 'Bebida helada super cremosa con galleta Oreo, crema batida, chispas de chocolate y una galleta completa arriba.',
-      precio: '$60',
-      etiqueta: 'Súper Frío ❄️',
-      imagen: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=600&q=80'
+      nombre: 'Implantes y Rehabilitación',
+      categoria: 'especializada',
+      descripcion: 'Recupera la funcionalidad y estética de tu sonrisa con implantes de titanio biocompatibles de alta duración.',
+      precio: 'Consulta previa',
+      etiqueta: 'Alta Durabilidad 🛡️',
+      imagen: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80'
     },
     {
       id: 5,
-      nombre: 'Maruchan Preparada Loco-Mix',
-      categoria: 'salados',
-      descripcion: 'Sopa Maruchan con elotito desgranado, queso fundido, crema, cacahuates japoneses, salsa Valentina y limón.',
-      precio: '$55',
-      etiqueta: 'Para el Monchis 🤤',
-      imagen: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80'
+      nombre: 'Diseño de Sonrisa & Carillas',
+      categoria: 'estetica',
+      descripcion: 'Transformación estética personalizada mediante carillas de porcelana o resina de alta definición.',
+      precio: 'Personalizado',
+      etiqueta: 'Sonrisa de Revista ⭐',
+      imagen: 'https://images.unsplash.com/photo-1571772996211-2f02c9727629?auto=format&fit=crop&w=600&q=80'
     },
     {
       id: 6,
-      nombre: 'Waffles Burbuja con Helado',
-      categoria: 'postres',
-      descripcion: 'Waffle de burbujas crujiente por fuera y suave por dentro, cargado de helado, topping de Choco-Krispis y M&M’s.',
-      precio: '$70',
-      etiqueta: 'Delicioso 🧇',
-      imagen: 'https://images.unsplash.com/photo-1562376552-0d160a2f238d?auto=format&fit=crop&w=600&q=80'
+      nombre: 'Odontopediatría (Atención Infantil)',
+      categoria: 'preventiva',
+      descripcion: 'Cuidado dental especializado para niños en un ambiente libre de estrés, enfocado en prevención y selladores.',
+      precio: 'Desde $500',
+      etiqueta: 'Trato Amigable 👶',
+      imagen: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'
     }
   ];
 
-  const filteredItems = activeCategory === 'todos'
-    ? menuItems
-    : menuItems.filter(item => item.categoria === activeCategory);
+  const filteredServicios = activeCategory === 'todos'
+    ? servicios
+    : servicios.filter(item => item.categoria === activeCategory);
 
   return (
-    <div className="relative w-screen min-h-screen bg-amber-950/20 text-stone-800 font-sans antialiased selection:bg-orange-500 selection:text-white overflow-x-hidden left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+    <div className="relative w-screen min-h-screen bg-slate-50 text-slate-800 font-sans antialiased selection:bg-cyan-600 selection:text-white overflow-x-hidden left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
 
       {/* BACKGROUND GLOW / GRADIENT EFFECTS */}
       <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute -top-40 -left-40 w-96 h-96 bg-amber-400/20 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/3 -right-40 w-96 h-96 bg-orange-500/15 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 left-1/3 w-96 h-96 bg-red-500/15 rounded-full blur-3xl"></div>
+        <div className="absolute -top-40 -left-40 w-96 h-96 bg-cyan-200/40 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 -right-40 w-96 h-96 bg-sky-300/30 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 left-1/3 w-96 h-96 bg-teal-200/30 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative z-10 w-full">
 
         {/* HEADER / NAVIGATION */}
-        <header className="sticky top-0 z-50 backdrop-blur-md bg-stone-900/90 border-b border-amber-900/40 text-stone-100 shadow-md">
+        <header className="sticky top-0 z-50 backdrop-blur-md bg-white/90 border-b border-slate-200 text-slate-900 shadow-sm">
           <div className="w-full px-6 sm:px-12 lg:px-16 h-20 flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 to-orange-600 flex items-center justify-center shadow-lg shadow-orange-500/30">
-                <Utensils className="w-6 h-6 text-white" />
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-600 to-teal-500 flex items-center justify-center shadow-md shadow-cyan-500/20">
+                <Smile className="w-6 h-6 text-white" />
               </div>
-              <span className="text-2xl font-black tracking-tight bg-gradient-to-r from-amber-400 via-orange-300 to-amber-200 bg-clip-text text-transparent">
-                El Rincón del Antojo 🍿
+              <span className="text-2xl font-black tracking-tight text-slate-900">
+                Dental<span className="text-cyan-600">Smile</span>
               </span>
             </div>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center space-x-8 text-sm font-semibold text-stone-300">
-              <a href="#menu" className="hover:text-amber-400 transition-colors">Menú de Antojitos</a>
-              <a href="#nosotros" className="hover:text-amber-400 transition-colors">¿Por qué elegirnos?</a>
-              <a href="#promos" className="hover:text-amber-400 transition-colors">Promociones</a>
-              <a href="#contacto" className="hover:text-amber-400 transition-colors">Ubicación y Pedidos</a>
+            <nav className="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+              <a href="#servicios" className="hover:text-cyan-600 transition-colors">Servicios</a>
+              <a href="#nosotros" className="hover:text-cyan-600 transition-colors">¿Por qué elegirnos?</a>
+              <a href="#promos" className="hover:text-cyan-600 transition-colors">Promociones</a>
+              <a href="#contacto" className="hover:text-cyan-600 transition-colors">Ubicación y Citas</a>
             </nav>
 
             <div className="hidden md:flex items-center space-x-4">
               <a
-                href="https://wa.me/5213300000000?text=Hola!%20Quiero%20hacer%20un%20pedido%20de%20antojitos"
+                href="https://wa.me/5213300000000?text=Hola!%20Me%20gustaría%20agendar%20una%20cita%20de%20valoración%20dental"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-bold rounded-xl text-stone-900 bg-amber-400 hover:bg-amber-300 transition-all shadow-lg shadow-amber-500/25 transform hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-bold rounded-xl text-white bg-cyan-600 hover:bg-cyan-700 transition-all shadow-md shadow-cyan-600/20 transform hover:-translate-y-0.5"
               >
-                <ShoppingBag className="w-4 h-4 mr-2" />
-                Pedir por WhatsApp
+                <Calendar className="w-4 h-4 mr-2" />
+                Agendar por WhatsApp
               </a>
             </div>
 
@@ -129,7 +132,7 @@ export default function AntojitosLanding() {
             <div className="md:hidden">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 rounded-lg text-amber-400 hover:text-white hover:bg-stone-800 focus:outline-none"
+                className="p-2 rounded-lg text-slate-700 hover:text-cyan-600 hover:bg-slate-100 focus:outline-none"
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
@@ -138,57 +141,56 @@ export default function AntojitosLanding() {
 
           {/* Mobile Nav Drawer */}
           {mobileMenuOpen && (
-            <div className="md:hidden border-b border-stone-800 bg-stone-900/95 backdrop-blur-xl px-6 pt-2 pb-6 space-y-3 w-full">
-              <a href="#menu" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2 rounded-lg text-base font-medium text-stone-300 hover:text-amber-400 hover:bg-stone-800">Menú de Antojitos</a>
-              <a href="#nosotros" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2 rounded-lg text-base font-medium text-stone-300 hover:text-amber-400 hover:bg-stone-800">¿Por qué elegirnos?</a>
-              <a href="#promos" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2 rounded-lg text-base font-medium text-stone-300 hover:text-amber-400 hover:bg-stone-800">Promociones</a>
-              <a href="#contacto" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2 rounded-lg text-base font-medium text-stone-300 hover:text-amber-400 hover:bg-stone-800">Ubicación y Pedidos</a>
+            <div className="md:hidden border-b border-slate-200 bg-white/95 backdrop-blur-xl px-6 pt-2 pb-6 space-y-3 w-full">
+              <a href="#servicios" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:text-cyan-600 hover:bg-slate-50">Servicios</a>
+              <a href="#nosotros" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:text-cyan-600 hover:bg-slate-50">¿Por qué elegirnos?</a>
+              <a href="#promos" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:text-cyan-600 hover:bg-slate-50">Promociones</a>
+              <a href="#contacto" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:text-cyan-600 hover:bg-slate-50">Ubicación y Citas</a>
               <a
-                href="https://wa.me/5213300000000?text=Hola!%20Quiero%20hacer%20un%20pedido%20de%20antojitos"
+                href="https://wa.me/5213300000000?text=Hola!%20Me%20gustaría%20agendar%20una%20cita%20de%20valoración%20dental"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block w-full text-center mt-4 px-5 py-3 text-base font-bold rounded-xl text-stone-900 bg-amber-400"
+                className="block w-full text-center mt-4 px-5 py-3 text-base font-bold rounded-xl text-white bg-cyan-600 hover:bg-cyan-700"
               >
-                Pedir por WhatsApp 🛵
+                Agendar por WhatsApp 📅
               </a>
             </div>
           )}
         </header>
 
         {/* HERO SECTION */}
-        <section className="relative pt-12 pb-20 md:pt-24 md:pb-32 px-6 sm:px-12 lg:px-16 w-full text-center bg-stone-950 text-white overflow-hidden">
+        <section className="relative pt-12 pb-20 md:pt-24 md:pb-32 px-6 sm:px-12 lg:px-16 w-full text-center bg-gradient-to-b from-slate-900 via-slate-850 to-slate-900 text-white overflow-hidden">
           <div className="max-w-5xl mx-auto flex flex-col items-center relative z-10">
-            <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-orange-500/20 border border-orange-500/30 text-orange-400 text-xs sm:text-sm font-semibold mb-8 backdrop-blur-sm">
-              <Flame className="w-4 h-4 text-orange-400" />
-              <span>¡La mejor gusguera de la ciudad para calmar el antojo!</span>
+            <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-cyan-500/20 border border-cyan-400/30 text-cyan-300 text-xs sm:text-sm font-semibold mb-8 backdrop-blur-sm">
+              <Sparkles className="w-4 h-4 text-cyan-400" />
+              <span>Especialistas Odontológicos con Tecnología Digital</span>
             </div>
 
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight leading-tight mb-6">
-              Salchipulpos, Crepas & <br className="hidden sm:inline" />
-              <span className="bg-gradient-to-r from-amber-400 via-orange-400 to-red-500 bg-clip-text text-transparent">
-                Antojitos que Enamoran
+              Recupera la Salud y <br className="hidden sm:inline" />
+              <span className="bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 bg-clip-text text-transparent">
+                Brillo de tu Sonrisa
               </span>
             </h1>
 
-            <p className="max-w-2xl mx-auto text-base sm:text-xl text-stone-300 font-normal leading-relaxed mb-10">
-              Prepárate para disfrutar de los mejores esquites, papas preparadas, crepas dulces y frappés. Todo hecho al momento y bien cargadito.
+            <p className="max-w-2xl mx-auto text-base sm:text-xl text-slate-300 font-normal leading-relaxed mb-10">
+              Tratamientos dentales integrales, sin dolor y con tecnología de vanguardia. Cuidamos de ti y de tu familia en un ambiente cómodo y seguro.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md mx-auto">
               <a
-                href="#menu"
-                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-2xl text-stone-900 bg-amber-400 hover:bg-amber-300 shadow-xl shadow-amber-500/20 transition-all transform hover:-translate-y-0.5"
+                href="#contacto"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-2xl text-slate-950 bg-cyan-400 hover:bg-cyan-300 shadow-xl shadow-cyan-500/20 transition-all transform hover:-translate-y-0.5"
               >
-                Ver Menú Antojable
-                <Utensils className="ml-2 w-5 h-5" />
+                Agendar Valoración
+                <Calendar className="ml-2 w-5 h-5" />
               </a>
               <a
-                href="#contacto"
-                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-2xl text-stone-200 bg-stone-900 hover:bg-stone-800 border border-stone-800"
+                href="#servicios"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-2xl text-slate-200 bg-slate-800 hover:bg-slate-700 border border-slate-700"
               >
-                <MapPin className="mr-2 w-5 h-5 text-amber-400" />
-                ¿Dónde estamos?
+                Ver Servicios
               </a>
             </div>
           </div>
@@ -196,51 +198,52 @@ export default function AntojitosLanding() {
           {/* BANNER / HIGHLIGHT CARDS */}
           <div className="mt-14 sm:mt-20 relative w-full max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-              <div className="p-6 rounded-2xl bg-stone-900/90 border border-amber-500/20 shadow-xl">
-                <Flame className="w-8 h-8 text-orange-400 mb-3" />
-                <div className="text-xl font-bold text-white">Botanas Calientitas</div>
-                <div className="text-sm text-stone-400 mt-1">Salchipulpos, papas, nachos y esquites recién preparados.</div>
+              <div className="p-6 rounded-2xl bg-slate-800/90 border border-cyan-500/20 shadow-xl">
+                <ShieldCheck className="w-8 h-8 text-cyan-400 mb-3" />
+                <div className="text-xl font-bold text-white">Sin Dolor ni Estrés</div>
+                <div className="text-sm text-slate-300 mt-1">Técnicas de anestesia local avanzadas e instrumental ultra suave.</div>
               </div>
-              <div className="p-6 rounded-2xl bg-stone-900/90 border border-amber-500/20 shadow-xl">
-                <Cake className="w-8 h-8 text-amber-400 mb-3" />
-                <div className="text-xl font-bold text-white">Postres Deliciosos</div>
-                <div className="text-sm text-stone-400 mt-1">Crepas crujientes, waffles burbuja y marquesitas al gusto.</div>
+              <div className="p-6 rounded-2xl bg-slate-800/90 border border-cyan-500/20 shadow-xl">
+                <Award className="w-8 h-8 text-teal-400 mb-3" />
+                <div className="text-xl font-bold text-white">Dentistas Certificados</div>
+                <div className="text-sm text-slate-300 mt-1">Equipo médico de especialistas capacitados continuamente.</div>
               </div>
-              <div className="p-6 rounded-2xl bg-stone-900/90 border border-amber-500/20 shadow-xl">
-                <Coffee className="w-8 h-8 text-red-400 mb-3" />
-                <div className="text-xl font-bold text-white">Bebidas & Frappés</div>
-                <div className="text-sm text-stone-400 mt-1">Malteadas, frappés, chamoyadas y refrescos bien helados.</div>
+              <div className="p-6 rounded-2xl bg-slate-800/90 border border-cyan-500/20 shadow-xl">
+                <Activity className="w-8 h-8 text-emerald-400 mb-3" />
+                <div className="text-xl font-bold text-white">Tecnología 3D & Digital</div>
+                <div className="text-sm text-slate-300 mt-1">Diagnósticos precisos con radiografía digital e introral.</div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* MENÚ DE PRODUCTOS */}
-        <section id="menu" className="py-20 bg-stone-100 border-y border-stone-300 w-full px-6 sm:px-12 lg:px-16">
+        {/* CATÁLOGO DE SERVICIOS */}
+        <section id="servicios" className="py-20 bg-slate-100 border-y border-slate-200 w-full px-6 sm:px-12 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <span className="text-xs font-black uppercase tracking-wider text-orange-600 bg-orange-100 px-3 py-1 rounded-full">
-                Lo mejor para tu monchis
+              <span className="text-xs font-black uppercase tracking-wider text-cyan-700 bg-cyan-100 px-3 py-1 rounded-full">
+                Atención Médica Especializada
               </span>
-              <h2 className="text-3xl sm:text-5xl font-extrabold text-stone-900 mt-3 mb-4">Nuestro Menú de Antojitos</h2>
-              <p className="text-stone-600 text-base sm:text-lg">Elige lo que más se te antoje hoy. ¡Ingredientes frescos y porciones generosas!</p>
+              <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mt-3 mb-4">Nuestros Tratamientos</h2>
+              <p className="text-slate-600 text-base sm:text-lg">Ofrecemos soluciones personalizadas para mantener tus dientes fuertes, sanos y estéticos.</p>
             </div>
 
             {/* Filtros de Categoría */}
             <div className="flex flex-wrap justify-center gap-3 mb-12">
               {[
-                { key: 'todos', label: 'Todos los Antojos ✨' },
-                { key: 'salados', label: 'Salados y Botaneros 🍿' },
-                { key: 'postres', label: 'Postres y Crepas 🍓' },
-                { key: 'bebidas', label: 'Frappés y Bebidas 🥤' }
+                { key: 'todos', label: 'Todos los Tratamientos 🦷' },
+                { key: 'preventiva', label: 'Prevención y Limpieza 🛡️' },
+                { key: 'estetica', label: 'Estética y Blanqueamiento ✨' },
+                { key: 'ortodoncia', label: 'Ortodoncia / Brackets 📏' },
+                { key: 'especializada', label: 'Implantes y Cirugía 🏥' }
               ].map(cat => (
                 <button
                   key={cat.key}
                   onClick={() => setActiveCategory(cat.key)}
                   className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all ${
                     activeCategory === cat.key
-                      ? 'bg-amber-500 text-stone-950 shadow-md shadow-amber-500/30'
-                      : 'bg-white text-stone-700 hover:bg-stone-200 border border-stone-300'
+                      ? 'bg-cyan-600 text-white shadow-md shadow-cyan-600/30'
+                      : 'bg-white text-slate-700 hover:bg-slate-200 border border-slate-300'
                   }`}
                 >
                   {cat.label}
@@ -248,30 +251,30 @@ export default function AntojitosLanding() {
               ))}
             </div>
 
-            {/* Grid de Productos */}
+            {/* Grid de Servicios */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredItems.map(item => (
-                <div key={item.id} className="bg-white rounded-3xl overflow-hidden border border-stone-200 shadow-lg hover:shadow-xl transition-shadow flex flex-col justify-between">
+              {filteredServicios.map(item => (
+                <div key={item.id} className="bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-lg hover:shadow-xl transition-shadow flex flex-col justify-between">
                   <div>
-                    <div className="relative h-48 w-full overflow-hidden bg-stone-200">
+                    <div className="relative h-48 w-full overflow-hidden bg-slate-200">
                       <img
                         src={item.imagen}
                         alt={item.nombre}
                         className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
                       />
-                      <span className="absolute top-3 right-3 bg-stone-900/80 backdrop-blur-md text-amber-400 text-xs font-bold px-3 py-1.5 rounded-full">
+                      <span className="absolute top-3 right-3 bg-slate-900/80 backdrop-blur-md text-cyan-300 text-xs font-bold px-3 py-1.5 rounded-full">
                         {item.etiqueta}
                       </span>
                     </div>
 
                     <div className="p-6">
                       <div className="flex justify-between items-start mb-2">
-                        <h3 className="text-xl font-bold text-stone-900">{item.nombre}</h3>
-                        <span className="text-xl font-black text-orange-600 bg-orange-50 px-2.5 py-1 rounded-lg">
+                        <h3 className="text-xl font-bold text-slate-900">{item.nombre}</h3>
+                        <span className="text-sm font-black text-cyan-700 bg-cyan-50 px-2.5 py-1 rounded-lg border border-cyan-100">
                           {item.precio}
                         </span>
                       </div>
-                      <p className="text-stone-600 text-sm leading-relaxed mb-4">
+                      <p className="text-slate-600 text-sm leading-relaxed mb-4">
                         {item.descripcion}
                       </p>
                     </div>
@@ -279,13 +282,13 @@ export default function AntojitosLanding() {
 
                   <div className="px-6 pb-6">
                     <a
-                      href={`https://wa.me/5213300000000?text=Hola!%20Me%20interesa%20pedir:%20${encodeURIComponent(item.nombre)}`}
+                      href={`https://wa.me/5213300000000?text=Hola!%20Me%20interesa%20información%20sobre:%20${encodeURIComponent(item.nombre)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full py-3 px-4 rounded-xl font-bold text-stone-900 bg-amber-400 hover:bg-amber-300 flex items-center justify-center space-x-2 transition-colors"
+                      className="w-full py-3 px-4 rounded-xl font-bold text-white bg-cyan-600 hover:bg-cyan-700 flex items-center justify-center space-x-2 transition-colors"
                     >
-                      <ShoppingBag className="w-4 h-4" />
-                      <span>Pedir este antojo</span>
+                      <Calendar className="w-4 h-4" />
+                      <span>Agendar para este servicio</span>
                     </a>
                   </div>
                 </div>
@@ -295,33 +298,33 @@ export default function AntojitosLanding() {
         </section>
 
         {/* POR QUÉ ELEGIRNOS */}
-        <section id="nosotros" className="py-20 bg-stone-900 text-stone-100 w-full px-6 sm:px-12 lg:px-16">
+        <section id="nosotros" className="py-20 bg-slate-900 text-slate-100 w-full px-6 sm:px-12 lg:px-16">
           <div className="max-w-7xl mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">¿Por qué somos tu mejor opción?</h2>
-              <p className="text-stone-400 text-base sm:text-lg">Nos apasiona preparar cada pedido como si fuera para nosotros mismos.</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">¿Por qué confiar tu sonrisa con nosotros?</h2>
+              <p className="text-slate-400 text-base sm:text-lg">Nos distingue el compromiso ético, la calidez humana y la excelencia clínica.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="p-8 rounded-3xl bg-stone-800/80 border border-stone-700/60">
-                <Sparkles className="w-8 h-8 text-amber-400 mb-6" />
-                <h3 className="text-xl font-bold text-white mb-3">Preparación al Instante</h3>
-                <p className="text-stone-400 text-sm leading-relaxed">
-                  Nada de comida calentada en microondas. Cocinamos y preparamos todo en el momento para garantizar frescura y textura crujiente.
+              <div className="p-8 rounded-3xl bg-slate-800/80 border border-slate-700/60">
+                <UserCheck className="w-8 h-8 text-cyan-400 mb-6" />
+                <h3 className="text-xl font-bold text-white mb-3">Diagnóstico Transparente</h3>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  Te explicamos con imágenes intraorales el estado real de tu boca antes de cualquier procedimiento. Sin cargos ocultos.
                 </p>
               </div>
-              <div className="p-8 rounded-3xl bg-stone-800/80 border border-stone-700/60">
-                <HeartHandshake className="w-8 h-8 text-orange-400 mb-6" />
-                <h3 className="text-xl font-bold text-white mb-3">Salsas y Toppings ilimitados</h3>
-                <p className="text-stone-400 text-sm leading-relaxed">
-                  Tú pones el límite. Contamos con amplia variedad de salsas caseras, chiles, aderezos, jarabes dulces y granillo.
+              <div className="p-8 rounded-3xl bg-slate-800/80 border border-slate-700/60">
+                <CheckCircle2 className="w-8 h-8 text-teal-400 mb-6" />
+                <h3 className="text-xl font-bold text-white mb-3">Estesterilización Rigurosa</h3>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  Cumplimos estrictos protocolos internacionales de bioseguridad y esterilización para la protección total de nuestros pacientes.
                 </p>
               </div>
-              <div className="p-8 rounded-3xl bg-stone-800/80 border border-stone-700/60">
-                <Clock className="w-8 h-8 text-red-400 mb-6" />
-                <h3 className="text-xl font-bold text-white mb-3">Atención Rápida y Amigable</h3>
-                <p className="text-stone-400 text-sm leading-relaxed">
-                  Pide por WhatsApp para pasar a recoger sin filas o visítanos directamente en nuestro local con el mejor ambiente familiar.
+              <div className="p-8 rounded-3xl bg-slate-800/80 border border-slate-700/60">
+                <Clock className="w-8 h-8 text-emerald-400 mb-6" />
+                <h3 className="text-xl font-bold text-white mb-3">Atención PUNTUAL y Citas Flexibles</h3>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  Respetamos tu tiempo. Contamos con horarios vespertinos y atención de urgencias dentales el mismo día.
                 </p>
               </div>
             </div>
@@ -329,91 +332,91 @@ export default function AntojitosLanding() {
         </section>
 
         {/* PROMO BANNER */}
-        <section id="promos" className="py-16 bg-gradient-to-r from-orange-600 to-amber-500 text-stone-950 w-full px-6 sm:px-12 lg:px-16">
+        <section id="promos" className="py-16 bg-gradient-to-r from-cyan-600 to-teal-500 text-white w-full px-6 sm:px-12 lg:px-16">
           <div className="max-w-5xl mx-auto rounded-3xl bg-white/10 backdrop-blur-md p-8 sm:p-12 border border-white/20 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="text-left">
-              <span className="bg-stone-950 text-amber-400 text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
-                ¡Combo Pareja / Amigos! 👯‍♂️
+              <span className="bg-slate-950 text-cyan-300 text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
+                ¡Promoción de Nuevo Paciente! 🎉
               </span>
-              <h3 className="text-3xl sm:text-4xl font-black mt-3 mb-2 text-stone-950">
-                2 Crepas Dulces + 2 Frappés por $220
+              <h3 className="text-3xl sm:text-4xl font-black mt-3 mb-2 text-white">
+                Cita de Valoración + Radiografía Diagnóstica GRATIS
               </h3>
-              <p className="text-stone-900 font-medium text-sm sm:text-base">
-                Válido de Viernes a Domingo a partir de las 6:00 PM. ¡Ven con quien más quieras!
+              <p className="text-cyan-50 font-medium text-sm sm:text-base">
+                Válido para tu primera visita reservando esta semana. ¡Da el primer paso hacia una boca sana!
               </p>
             </div>
             <a
-              href="https://wa.me/5213300000000?text=Hola!%20Quiero%20aprovechar%20la%20promo%20de%202%20Crepas%20%2B%202%20Frappes"
+              href="https://wa.me/5213300000000?text=Hola!%20Quiero%20aprovechar%20la%20promo%20de%20Valoracion%20y%20Radiografia%20Gratis"
               target="_blank"
               rel="noopener noreferrer"
-              className="whitespace-nowrap px-8 py-4 font-black rounded-2xl bg-stone-950 text-amber-400 hover:bg-stone-900 shadow-xl transition-all"
+              className="whitespace-nowrap px-8 py-4 font-black rounded-2xl bg-slate-950 text-cyan-300 hover:bg-slate-900 shadow-xl transition-all"
             >
-              Pedir Combo Ahora 🔥
+              Reclamar Cita Gratis ✨
             </a>
           </div>
         </section>
 
-        {/* UBICACIÓN Y CONTACTO */}
-        <section id="contacto" className="py-20 bg-stone-950 border-t border-stone-800 text-stone-100 w-full px-6 sm:px-12 lg:px-16">
+        {/* UBICACIÓN Y CITA */}
+        <section id="contacto" className="py-20 bg-slate-950 border-t border-slate-800 text-slate-100 w-full px-6 sm:px-12 lg:px-16">
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
             {/* Info de contacto */}
             <div className="space-y-6">
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-amber-400">Visítanos o pide a domicilio</span>
-                <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4">¿Se te antojó algo?</h2>
-                <p className="text-stone-400 text-sm sm:text-base">
-                  Pasa a nuestro local a disfrutar tus antojos o envíanos un mensaje por WhatsApp para tener listo tu pedido cuando llegues.
+                <span className="text-xs font-bold uppercase tracking-wider text-cyan-400">Visítanos en la clínica</span>
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4">¿Listo para agendar tu consulta?</h2>
+                <p className="text-slate-400 text-sm sm:text-base">
+                  Estamos ubicados en una zona accesible con estacionamiento. Completa el formulario o contáctanos por teléfono/WhatsApp.
                 </p>
               </div>
 
               <div className="space-y-4">
-                <div className="flex items-start space-x-4 p-4 rounded-2xl bg-stone-900 border border-stone-800">
-                  <MapPin className="w-6 h-6 text-amber-400 flex-shrink-0 mt-1" />
+                <div className="flex items-start space-x-4 p-4 rounded-2xl bg-slate-900 border border-slate-800">
+                  <MapPin className="w-6 h-6 text-cyan-400 flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-bold text-white text-sm">Ubicación</h4>
-                    <p className="text-xs text-stone-400 mt-0.5">Av. Hidalgo #123, Col. Centro (A un lado del parque principal)</p>
+                    <h4 className="font-bold text-white text-sm">Dirección del Consultorio</h4>
+                    <p className="text-xs text-slate-400 mt-0.5">Av. Médica Principal #450, Consultorio 302, Col. Centro</p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4 p-4 rounded-2xl bg-stone-900 border border-stone-800">
-                  <Clock className="w-6 h-6 text-orange-400 flex-shrink-0 mt-1" />
+                <div className="flex items-start space-x-4 p-4 rounded-2xl bg-slate-900 border border-slate-800">
+                  <Clock className="w-6 h-6 text-teal-400 flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-bold text-white text-sm">Horario de Atención</h4>
-                    <p className="text-xs text-stone-400 mt-0.5">Martes a Domingo: 4:00 PM – 11:00 PM (Lunes cerrado)</p>
+                    <h4 className="font-bold text-white text-sm">Horario de Consulta</h4>
+                    <p className="text-xs text-slate-400 mt-0.5">Lunes a Viernes: 9:00 AM – 8:00 PM | Sábados: 9:00 AM – 2:00 PM</p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4 p-4 rounded-2xl bg-stone-900 border border-stone-800">
-                  <Phone className="w-6 h-6 text-amber-400 flex-shrink-0 mt-1" />
+                <div className="flex items-start space-x-4 p-4 rounded-2xl bg-slate-900 border border-slate-800">
+                  <PhoneCall className="w-6 h-6 text-cyan-400 flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-bold text-white text-sm">Pedidos y WhatsApp</h4>
-                    <p className="text-xs text-stone-400 mt-0.5">+52 (33) 0000-0000</p>
+                    <h4 className="font-bold text-white text-sm">Teléfono de Citas / Urgencias</h4>
+                    <p className="text-xs text-slate-400 mt-0.5">+52 (33) 0000-0000</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Formulario rápido de mensaje / pedido especial */}
-            <div className="p-8 sm:p-10 rounded-3xl bg-stone-900 border border-stone-800 shadow-2xl">
-              <h3 className="text-2xl font-bold text-white mb-2">Envíanos un mensaje rápido</h3>
-              <p className="text-xs text-stone-400 mb-6">¿Tienes duda sobre algún ingrediente o deseas hacer un pedido para evento?</p>
+            {/* Formulario rápido de cita */}
+            <div className="p-8 sm:p-10 rounded-3xl bg-slate-900 border border-slate-800 shadow-2xl">
+              <h3 className="text-2xl font-bold text-white mb-2">Solicita tu cita de valoración</h3>
+              <p className="text-xs text-slate-400 mb-6">Te contactaremos a la brevedad para confirmar fecha y horario disponible.</p>
 
               <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-semibold text-stone-400 uppercase tracking-wider mb-2">Tu Nombre</label>
-                  <input type="text" placeholder="Ej. Juan Pérez" className="w-full px-4 py-3 rounded-xl bg-stone-950 border border-stone-800 text-white focus:outline-none focus:border-amber-500 text-sm" />
+                  <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Nombre Completo</label>
+                  <input type="text" placeholder="Ej. Ana María García" className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white focus:outline-none focus:border-cyan-500 text-sm" />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-stone-400 uppercase tracking-wider mb-2">Tu Teléfono / WhatsApp</label>
-                  <input type="tel" placeholder="Ej. 33 1234 5678" className="w-full px-4 py-3 rounded-xl bg-stone-950 border border-stone-800 text-white focus:outline-none focus:border-amber-500 text-sm" />
+                  <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Teléfono / WhatsApp</label>
+                  <input type="tel" placeholder="Ej. 33 1234 5678" className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white focus:outline-none focus:border-cyan-500 text-sm" />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-stone-400 uppercase tracking-wider mb-2">¿Qué se te antoja o qué consulta tienes?</label>
-                  <textarea rows="3" placeholder="Ej. Quiero 2 salchipulpos y un esquite para las 7:30pm..." className="w-full px-4 py-3 rounded-xl bg-stone-950 border border-stone-800 text-white focus:outline-none focus:border-amber-500 text-sm"></textarea>
+                  <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Motivo de la consulta o tratamiento deseado</label>
+                  <textarea rows="3" placeholder="Ej. Quisiera información sobre alineadores o una limpieza general..." className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white focus:outline-none focus:border-cyan-500 text-sm"></textarea>
                 </div>
-                <button type="submit" className="w-full py-3.5 px-6 rounded-xl font-bold text-stone-950 bg-amber-400 hover:bg-amber-300 shadow-lg shadow-amber-500/20 flex items-center justify-center space-x-2 transition-colors">
-                  <span>Enviar Consulta</span>
+                <button type="submit" className="w-full py-3.5 px-6 rounded-xl font-bold text-slate-950 bg-cyan-400 hover:bg-cyan-300 shadow-lg shadow-cyan-500/20 flex items-center justify-center space-x-2 transition-colors">
+                  <span>Solicitar Cita Dental</span>
                   <Send className="w-4 h-4" />
                 </button>
               </form>
@@ -425,8 +428,8 @@ export default function AntojitosLanding() {
       </div>
 
       {/* FOOTER */}
-      <footer className="relative z-10 border-t border-stone-800 bg-stone-950 py-8 px-6 text-center text-xs text-stone-500 w-full">
-        <p>© {new Date().getFullYear()} El Rincón del Antojo. Todos los derechos reservados. ¡Calmando antojos con amor! 🍿✨</p>
+      <footer className="relative z-10 border-t border-slate-800 bg-slate-950 py-8 px-6 text-center text-xs text-slate-500 w-full">
+        <p>© {new Date().getFullYear()} DentalSmile Clínica Odontológica. Todos los derechos reservados. Cuidando tu salud bucal con pasión.</p>
       </footer>
     </div>
   );
